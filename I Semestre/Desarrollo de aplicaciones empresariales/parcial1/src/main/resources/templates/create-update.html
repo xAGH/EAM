@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html xmlns:"th"="https://www.thymeleaf.org" lang="es">
+<head>
+    <meta charset="UTF-8">
+    <title>Concesionario del Pacífico S.A</title>
+    <link th:href="@{/css/styles.css}" rel="stylesheet" />
+</head>
+<body>
+    <h1 class="title">Ingreso de vehículos</h1>
+    <form method="post" th:object="${car}" th:action="@{/save}">
+        <div>
+            <div class="inputbox">
+                <label for="brand">Marca</label>
+                <input th:field="*{brand}" type="text" name="brand" id="brand" required="required">
+                <span th:if="${#fields.hasErrors('brand')}" th:errors="*{brand}">Error en la marca</span>
+            </div>
+            <div class="inputbox">
+                <label for="model">Modelo</label>
+                <input th:field="*{model}" type="text" id="model" name="model" required="required">
+                <span th:if="${#fields.hasErrors('model')}" th:errors="*{model}">Error en el modelo</span>
+        
+            </div>
+            <div class="inputbox">
+                <label for="year">Año</label>
+                <input th:field="*{year}" type="text" name="year" id="year" required="required">
+                <span th:if="${#fields.hasErrors('year')}" th:errors="*{year}">Error en el año</span>
+        
+            </div>
+            <div class="inputbox">
+                <label for="type">Tipo de vehículo</label>
+                <select th:field="*{type}" name="type" id="type">
+                    <option value="Automóvil">Automóvil</option>
+                    <option value="Camioneta">Camioneta</option>
+                    <option value="Carga Pesada">Carga Pesada</option>
+                </select>
+                <span th:if="${#fields.hasErrors('type')}" th:errors="*{type}">Error en el tipo</span>
+            </div>
+            <div class="inputbox">
+                <label for="engineCylinders">Cilindros de motor</label>
+                <input  th:field="*{engineCylinders}" type="text" name="engineCylinders" id="engineCylinders" required="required">
+                <span th:if="${#fields.hasErrors('engineCylinders')}" th:errors="*{engineCylinders}"></span>
+            </div>
+            <div class="inputbox">
+                <label for="fuelType">Tipo de combustible</label>
+                <select th:field="*{fuelType}" name="fuelType" id="type">
+                    <option value="Hibrido">Hibrido</option>
+                    <option value="Gasolina">Gasolina</option>
+                    <option value="Diesel">Diesel</option>
+                <span th:if="${#fields.hasErrors('fuelType')}" th:errors="*{fuelType}">Error en el tipo de combustible</span>
+            </select>
+            </div>
+            <input type="hidden" name="id" th:field="*{id}">
+            <div class="buttons">
+                <div class="inputbox">
+                    <button class="submit" type="submit">
+                        Registrar
+                    </button>
+                </div>
+                <div class="inputbox">
+                    <button class="volver" type="button">
+                        <a th:href="@{/}" th:text="Volver"></a>
+                    </button>
+                </div>
+            </div>
+        </div>
+    </form>    
+</body>
+</html>

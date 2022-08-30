@@ -1,0 +1,14 @@
+version: '3'
+volumes:
+  parcial_database:
+services:
+  database:
+    image: mysql:5
+    ports:
+      - "3306:3306"
+    container_name: parcial_db
+    environment:
+      - MYSQL_DATABASE=concessionaire
+      - MYSQL_ROOT_PASSWORD=parcial 
+    volumes:
+      - parcial_database:/var/lib/mysql
