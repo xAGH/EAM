@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html xmlns:"th"="https://www.thymeleaf.org" lang="es">
+<head>
+    <meta charset="UTF-8">
+    <title>Concesionario del Pacífico S.A</title>
+    <link th:href="@{/css/styles.css}" rel="stylesheet" />
+    <script type="text/javascript" th:src="@{/js/main.js}"></script>
+</head>
+<body>
+    <header class="title">Concesionario del Pacífico S.A</header>
+    
+    
+    <main>
+        <button class="registro">
+            <a th:href="@{/create}" th:text="Registro"></a>
+        </button>
+    <div th:if="${noCars}" class="noCars">
+        <p>En este momento no hay vehiculos para mostrar</p>
+    </div>
+    <div th:if="${!noCars}">
+        <table>
+            <tr>
+                <th>Marca</th>
+                <th>Modelo</th>
+                <th>Año</th>
+                <th>Tipo</th>
+                <th>Cilindros del motor</th>
+                <th>Tipo de combustible</th>
+                <th>Editar</th>
+                <th>Eliminar</th>
+            </tr>
+            <tr th:each="car: ${cars}">
+                <td th:text="${car.brand}"></td>
+                <td th:text="${car.model}"></td>
+                <td th:text="${car.year}"></td>
+                <td th:text="${car.type}"></td>
+                <td th:text="${car.engineCylinders}"></td>
+                <td th:text="${car.fuelType}"></td>
+                <td>
+                    <a th:href="@{/create/} + ${car.id}">🖊</a>
+                </td>
+                <td>
+                    <a th:href="@{/delete/} + ${car.id}">❌
+                    </a>
+                </td>
+            </tr>
+        </table>
+    </div>
+    </main>
+
+</body>
+</html>
