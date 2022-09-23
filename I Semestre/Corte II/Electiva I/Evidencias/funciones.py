@@ -2,7 +2,7 @@
 # intervalo (solución)
 def ejercicio1(numero: float, limite_min: float, limite_max: float) -> bool:
     print("Ejercicio 1")
-    return limite_min < numero < limite_max
+    return limite_min <= numero <= limite_max
 
 # Escriba una función en Python que reciba una lista de valores enteros y devuelva otra
 # lista sólo con aquellos valores pares (solución).
