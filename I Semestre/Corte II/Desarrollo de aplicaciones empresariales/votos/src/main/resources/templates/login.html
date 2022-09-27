@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <section th:replace="layout/basic_layout :: head"></section>
+    <title>Login</title>
+</head>
+<body class="login-container">
+    <script th:if="${param.error != null}" th:inline="javascript">
+        hola();
+    </script>
+    <div class="card">
+        <p class="login-title">Iniciar sesión</p>
+        <form class="login-form" method="post" th:action="@{/login}">
+            <input placeholder="Correo" class="input" type="text" id="email" name="email">
+            <input placeholder="Contraseña" class="input" type="password" id="password" name="password">
+            <input class="input" type="submit" value="Iniciar Sesión">
+        </form>
+    </div>
+</body>
+</html>

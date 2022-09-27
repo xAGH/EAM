@@ -1,0 +1,122 @@
+* {
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+    color: var(--text-color);
+    font-family: 'Roboto', sans-serif;
+}
+
+.header {
+    width: 100vw;
+    height: 10vh;
+    background-color: rgb(65, 65, 65);
+    margin-bottom: 5rem;
+    display: flex;
+    align-items: center;
+    padding: 0 3rem;
+    gap: 5rem;
+}
+
+body {
+    min-height: 100vh;
+    min-width: 100vw;
+    background-color: var(--bg-color)
+}
+
+main {
+    display: flex;
+    justify-content: space-evenly;
+    align-items: center;
+    height: 90%;
+    width: 90%;
+    margin: auto;
+    gap: 2rem;
+    flex-wrap: wrap;
+}
+
+.left, .right {
+    background-color: var(--card-color);
+    width: 45%;
+    border-radius: 1rem;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 1.5rem;
+    justify-content: space-between;
+}
+
+form {
+    display: flex;
+    margin: 1rem 0 1rem 0;
+    flex-wrap: wrap;
+    gap: 2rem;
+    justify-content: center;
+    margin-bottom: 5rem;
+}
+
+table {
+    width: 100%;
+    max-height: 500;
+    text-align: left;
+    border-collapse: collapse;
+}
+
+tbody {
+    max-height: 400px;
+    overflow: auto;
+}
+
+thead, tbody tr {
+    display: table;
+    width: 100%;
+    table-layout: fixed;
+    text-align: center;
+}
+
+thead {
+    font-size: 1.2rem;
+}
+
+table, th, td {
+    padding: 5px;
+    width: auto;
+    overflow: hidden;
+}
+  
+tr:nth-child(even) {
+    background-color: #bdbdbd;
+}
+
+.card {
+    background-color: var(--card-color);
+    width: 25rem;
+    border-radius: 1rem;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 1.5rem;
+    justify-content: space-between;
+}
+
+.card-title {
+    font-size: 1.5rem;
+}
+
+.description {
+    display: flex;
+    height: 12rem;
+    gap: 2rem;
+    justify-content: center;
+    align-items: center;
+}
+
+.login-form {
+    display: flex;
+    flex-direction: column;
+}
+
+.login-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}

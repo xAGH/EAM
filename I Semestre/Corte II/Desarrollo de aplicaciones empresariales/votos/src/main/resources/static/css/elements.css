@@ -1,0 +1,81 @@
+.admins, .languajes {
+    font-size: 1.8rem;
+    font-weight: 600;
+}
+
+.edit {
+    cursor: pointer;
+    color: rgb(72, 133, 238);
+}
+
+.delete {
+    cursor: pointer;
+    color: rgb(238, 36, 36);
+}
+
+.input{
+    font-size: 1.4rem;
+    padding: 0 1rem 0 1rem;
+    background-color: transparent;
+    outline: none;
+    border: none;
+    border-bottom: 2px solid rgb(143, 143, 143);
+}
+
+.input:focus {
+    border-bottom: 2px solid black;
+}
+
+input[type=submit] {
+    border: 2px solid rgb(143, 143, 143);
+    padding: 0.5rem;
+    cursor: pointer;
+}
+
+input[type=submit]:hover {
+    border: 2px solid black;
+}
+
+.data{
+    font-size: 1.4rem;
+    background-color: transparent;
+    outline: none;
+    border: none;
+}
+
+.header a {
+    color: white;
+    font-size: 3rem;
+    text-decoration: none;
+}
+
+.card-description {
+    font-size: 1.2rem;
+}
+
+.card-image {
+    width: 50%;
+}
+
+.votes {
+    display: flex;
+    gap: 3rem;
+}
+
+.up {
+    color: rgb(0, 208, 0);
+}
+
+.down {
+    color: red;
+}
+
+.login-title {
+    font-size: 2rem;
+}
+
+.logout {
+    -webkit-transform: scaleX(-1);
+    transform: scaleX(-1);
+    height: 3rem;
+}

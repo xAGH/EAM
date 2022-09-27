@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="es" xmlns="http://www.thymeleaf.org">
+<head>
+    <section th:replace="layout/basic_layout :: head"></section>
+    <title>Lenguajes de programación</title>
+</head>
+<body>
+    <section th:replace="layout/basic_layout :: header"></section>
+    <div class="body">
+        <main>
+            <div th:if="languajes != null">
+                <div class="card" th:each="languaje: ${languajes}">
+                    <p class="card-title" th:text="${languaje.name}"></p>
+                    <div class="description">
+                        <div>
+                            <p class="card-description" th:text="${languaje.description}"></p>
+                        </div>
+                        <img class="card-image" th:src="@{${languaje.images_url}}" alt="Languaje Image">
+                    </div>
+                    <div class="votes">
+                        <a th:href="@{/vote/} + ${languaje.id} + '/' + '0'">
+                            <span class="material-symbols-outlined up">
+                                thumb_up
+                            </span>
+                        </a>
+                        <p th:text="${languaje.votes}"></p>
+                        <a th:href="@{/vote/} + ${languaje.id} + '/' + '1'">
+                            <span class="material-symbols-outlined down">
+                                thumb_down
+                            </span>
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </main>
+    </div>
+</body>
+</html>

@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html lang="es" xmlns="http://www.thymeleaf.org">
+<head>
+    <section th:replace="layout/basic_layout :: head"></section>
+    <title>Admins Dashboard</title>
+</head>
+<body>
+    <section th:replace="layout/basic_layout :: header"></section>
+    <main>
+        <a th:href="@{/logout}">
+            <span class="material-symbols-outlined logout">
+                logout
+            </span>
+        </a>
+        <section class="left">
+            <p class="admins">Administradores</p>
+            <form method="post" th:action="@{/admin/register-admin}" th:object="${admin}">
+                <div th:if="${admin == null}"><input class="input" type="text" placeholder="Nombre" name="name" id="name"></div>
+                <div th:if="${admin == null}"><input class="input" type="text" placeholder="Correo" name="email" id="email"></div>
+                <div th:if="${admin == null}"><input class="input" type="password" placeholder="Contraseña" name="password" id="password"></div>
+                
+                <div th:if="${admin != null}"><input type="hidden" name="id" th:field="*{id}"></div>
+                <div th:if="${admin != null}"><input class="input" th:field="*{name}" type="text" placeholder="Nombre" name="name" id="name"></div>
+                <div th:if="${admin != null}"><input class="input" th:field="*{email}" type="text" placeholder="Correo" name="email" id="email"></div>
+                <div th:if="${admin != null}"><input class="input" th:field="*{password}" type="password" placeholder="Contraseña" name="password" id="password"></div>
+                
+                <input class="input" type="submit" value="Registrar" id="registrar" name="registrar">
+            </form>
+
+            <div th:if="${admins != null and !admins.empty}">
+                <table>
+                    <thead>
+                        <tr>
+                            <th>Nombre</th>
+                            <th>Correo</th>
+                            <th>Editar</th>
+                            <th>Eliminar</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr th:each="admin : ${admins}">
+                            <td th:text="${admin.name}"></td>
+                            <td th:text="${admin.email}"></td>
+                            <td><a th:href="@{/admin/update-admin/} + ${admin.id}"><span class="material-symbols-outlined edit">edit</span></a></td>
+                            <td><a th:href="@{/admin/delete-admin/} + ${admin.id}"><span class="material-symbols-outlined delete">delete</span></a></td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+            <div th:if="${estudiantes == null or estudiantes.empty}">
+                <h3>No hay administradores registrados.</h3>
+            </div>
+        </section>
+        <section class="right">
+            <p class="languajes">Lenguajes</p>
+            <form method="post" th:action="@{/admin/register-languaje}" th:object="${languaje}">
+                <div th:if="${languaje == null}"><input class="input" type="text" placeholder="Nombre" name="name" id="name"></div>
+                <div th:if="${languaje == null}"><input class="input" type="text" placeholder="Descripcion" name="description" id="description"></div>
+                <div th:if="${languaje == null}"><input class="input" type="number" value="0" placeholder="Votes" name="votes" id="votes"></div>
+                <div th:if="${languaje == null}"><input class="input" type="url" placeholder="Imagen (URL)" name="images_url" id="images_url"></div>
+                
+                <div th:if="${languaje != null}"><input type="hidden" name="id" th:field="*{id}"></div>
+                <div th:if="${languaje != null}"><input class="input" th:field="*{name}" type="text" placeholder="Nombre" name="name" id="name"></div>
+                <div th:if="${languaje != null}"><input class="input" th:field="*{description}" type="text" placeholder="Descripcion" name="description" id="description"></div>
+                <div th:if="${languaje != null}"><input class="input" th:field="*{votes}" type="number" value="0" placeholder="Votes" name="votes" id="votes"></div>
+                <div th:if="${languaje != null}"><input class="input" th:field="*{images_url}" type="url" placeholder="Imagen (URL)" name="images_url" id="images_url"></div>
+                
+
+                <input class="input" type="submit" value="Registrar">
+            </form>
+    
+            <div th:if="${languajes != null and !languajes.empty}">
+                <table>
+                    <thead>
+                        <tr>
+                            <th>Nombre</th>
+                            <th>Votos</th>
+                            <th>Descripción</th>
+                            <th>Imagen</th>
+                            <th>Editar</th>
+                            <th>Eliminar</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr th:each="languaje : ${languajes}">
+                            <td th:text="${languaje.name}"></td>
+                            <td th:text="${languaje.votes}"></td>
+                            <td th:text="${languaje.description}"></td>
+                            <td th:text="${languaje.images_url}"></td>
+                            <td><a th:href="@{/admin/update-languaje/} + ${languaje.id}"><span class="material-symbols-outlined edit">edit</span></a></td>
+                            <td><a th:href="@{/admin/delete-languaje/} + ${languaje.id}"><span class="material-symbols-outlined delete">delete</span></a></td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+            <div th:if="${estudiantes == null or estudiantes.empty}">
+                <h3>No hay lenguajes registrados.</h3>
+            </div>
+        </section>
+    </main>
+</body>
+</html>
