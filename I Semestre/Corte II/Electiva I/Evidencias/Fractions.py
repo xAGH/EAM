@@ -30,7 +30,7 @@ class Fraction:
             if type(num) != int: raise TypeError("El numerador y denominaodr deben de ser enteros.")
 
     @staticmethod
-    def recduce_fraction(num: int, den:int):
+    def reduce_fraction(num: int, den:int):
         gcd = Fraction.gcd(num, den)
         return num // gcd, den // gcd
 
@@ -38,7 +38,7 @@ class Fraction:
     def __init__(self, num: int, den: int) -> None:
         if den == 0: raise DivisionByZero("El denomidanor no puede ser 0")
         Fraction.only_integers(num, den)
-        num, den = Fraction.recduce_fraction(num, den)
+        num, den = Fraction.reduce_fraction(num, den)
         self.num = num
         self.den = den
 
@@ -55,7 +55,7 @@ class Fraction:
         den_len = den_len - largest if den_len > largest else largest - den_len
         num_spaces: str = " " * (num_len // 2)
         den_spaces: str = " " * (den_len // 2)
-        return f"{num_spaces}{num}{num_spaces}\n{'-' * largest}\n{den_spaces}{den}{den_spaces}"
+        return f"{num_spaces}{num}{num_spaces}\n{'‒' * largest}\n{den_spaces}{den}{den_spaces}"
 
     def __add__(self, fraction):
         num = (self.num * fraction.den) + (self.den * fraction.num )
@@ -84,7 +84,7 @@ class Fraction:
 
     
 
-fraccion = Fraction(25, 30)
+fraccion = Fraction(25323232, 3)
 fraccion2 = Fraction(40, 45) 
 print("Suma:")
 print(fraccion + fraccion2)
