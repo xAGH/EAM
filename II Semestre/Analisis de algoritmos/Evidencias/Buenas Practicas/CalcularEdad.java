@@ -38,7 +38,11 @@ public class CalcularEdad {
         try {
             // Se valida si la fecha de nacimiento es menor a la fecha de hoy por medio de
             // números.
-            if (LocalDate.parse(date).toEpochDay() < LocalDate.now().toEpochDay())
+            Long fechaNacimientoEnDias = LocalDate.parse(date).toEpochDay();
+            LocalDate hoy = LocalDate.now();
+            Long fechaNacimientoMinima = LocalDate.ofYearDay(hoy.getYear() - 150, 1).toEpochDay();// Fecha de nacimiento
+            // mínima permitida.
+            if (fechaNacimientoEnDias < hoy.toEpochDay() && fechaNacimientoEnDias >= fechaNacimientoMinima)
                 return true; // Se retorna true si la fecha de nacimiento es menor a la fecha de hoy y tiene
                              // un formato aceptado.
                              // Error porque la fecha de nacimiento es mayor a hoy.
@@ -77,6 +81,8 @@ public class CalcularEdad {
         Integer anio = diferencia.getYears();
         Integer mes = diferencia.getMonths();
         Integer dia = diferencia.getDays();
+
+        // Validaciones de año bisiesto.
 
         String edad = String.format(
                 "Su edad es de %d año%s, %d mes%s y %d días.",
