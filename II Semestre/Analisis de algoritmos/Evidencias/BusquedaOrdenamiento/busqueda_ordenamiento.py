@@ -77,3 +77,4 @@ def main() -> None:
 # condincición que se ejecute el módulo principal.
 if __name__ == "__main__":
     main()
+    
