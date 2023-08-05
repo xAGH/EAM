@@ -1,0 +1,19 @@
+1. Escribir en kotlin una función recursiva que divida dos números enteros por medio de
+restas sucesivas. Ejemplo: 12/3 es lo mismo que decir: 12 - 3 = 9, 9 - 3 = 6, 6 - 3 = 3, 3 - 3
+= 0. Hubo 4 restas hasta que dio 0, por lo tanto 12/3 = 4.
+
+2. Se debe diseñar el diagrama de clases y el código en Kotlin que supla las necesidades
+planteadas en el siguiente enunciado.
+Un software necesita gestionar información de los empleados y clientes de una empresa.
+Donde los empleados y clientes poseen datos como el nombre completo, documento de
+identidad y correo electrónico.
+Además, cada empleado tiene asignado un salario único, dependencia (ventas, recursos
+humanos, gerencia, operativo), y puede tener un conjunto de empleados subordinados.
+De los clientes además se necesita conocer su dirección de correspondencia y el teléfono.
+Un empleado siempre tendrá asignado un cargo, el cual tiene un nombre y un nivel
+jerárquico dentro de la empresa.
+La empresa tiene una razón social (nombre), un NIT y una dirección. Y podrá tener o no
+clientes asociados, pero siempre necesitará empleados.
+El software necesita las operaciones CRUD tanto para clientes como para empleados,
+además se desea obtener el valor de la nómina de toda la empresa y la nómina por cada
+dependencia. Tenga en cuenta que no se requiere interfaz gráfica de usuario.
