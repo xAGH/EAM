@@ -1,0 +1,5 @@
+<resources>
+    <string name="app_name">Unilocal</string>
+    <string name="title_activity_card_layout">CardLayout</string>
+    <string name="title_activity_main">MainActivity</string>
+</resources>
