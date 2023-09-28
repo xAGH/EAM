@@ -21,10 +21,13 @@ private val DarkColorScheme = darkColorScheme(
     primary = Purple500,
     secondary = Gray800,
     error = Red700,
-    onBackground = GrayBlue400,
+    onPrimary = White800,
     tertiary = Green500,
     scrim = Pink100,
-    inversePrimary = Yellow600
+    inversePrimary = Yellow600,
+    surface = Gray400,
+    surfaceTint = GrayBlue400,
+    outline = GrayBlue100
 )
 
 private val LightColorScheme = lightColorScheme(
@@ -32,10 +35,13 @@ private val LightColorScheme = lightColorScheme(
     primary = Blue500,
     secondary = Blue50,
     error = Red700,
-    onBackground = GrayBlue400,
+    onPrimary = Black800,
     tertiary = Green500,
     scrim = Pink100,
-    inversePrimary = Yellow600
+    inversePrimary = Yellow600,
+    surface = White800,
+    surfaceTint = GrayBlue400,
+    outline = GrayBlue100
 )
 
 @Composable

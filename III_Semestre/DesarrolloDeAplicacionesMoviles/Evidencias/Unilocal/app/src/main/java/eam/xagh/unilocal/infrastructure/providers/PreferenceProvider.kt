@@ -1,9 +1,8 @@
-package eam.xagh.unilocal.shared.infrastructure.providers
+package eam.xagh.unilocal.infrastructure.providers
 
 import android.content.Context
 import android.content.SharedPreferences
-import eam.xagh.unilocal.shared.domain.services.PreferenceService
-import javax.inject.Inject
+import eam.xagh.unilocal.domain.services.PreferenceService
 
 class PreferencesProvider constructor (private val context: Context) : PreferenceService {
     private val sharedPreferences: SharedPreferences =
@@ -18,6 +17,6 @@ class PreferencesProvider constructor (private val context: Context) : Preferenc
     }
 
     override fun getIsDarkMode(): Boolean {
-        return sharedPreferences.getBoolean(darkThemeKey, false)
+        return sharedPreferences.getBoolean(darkThemeKey, true)
     }
 }

@@ -1,11 +1,11 @@
-package eam.xagh.unilocal
+package eam.xagh.unilocal.presentation.shared.viewmodels.theme
 
 import androidx.compose.runtime.getValue
 import androidx.compose.runtime.mutableStateOf
 import androidx.compose.runtime.setValue
 import androidx.lifecycle.ViewModel
 import dagger.hilt.android.lifecycle.HiltViewModel
-import eam.xagh.unilocal.shared.infrastructure.providers.PreferencesProvider
+import eam.xagh.unilocal.infrastructure.providers.PreferencesProvider
 import javax.inject.Inject
 
 @HiltViewModel
