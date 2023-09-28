@@ -3,6 +3,7 @@
     xmlns:tools="http://schemas.android.com/tools">
 
     <application
+        android:name=".UnilocalApplication"
         android:allowBackup="true"
         android:dataExtractionRules="@xml/data_extraction_rules"
         android:fullBackupContent="@xml/backup_rules"
@@ -13,12 +14,12 @@
         android:theme="@style/Theme.Unilocal"
         tools:targetApi="31">
         <activity
-            android:name=".core.presentation.components.MainActivity"
+            android:name=".shared.domain.components.MainActivity"
             android:exported="false"
             android:label="@string/title_activity_main"
             android:theme="@style/Theme.Unilocal" />
         <activity
-            android:name=".core.presentation.CardLayout"
+            android:name=".shared.domain.CardLayout"
             android:exported="false"
             android:label="@string/title_activity_card_layout"
             android:theme="@style/Theme.Unilocal" />

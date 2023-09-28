@@ -1,4 +1,4 @@
-package eam.xagh.unilocal.ui.theme
+package eam.xagh.unilocal.presentation.theme
 
 import androidx.compose.ui.graphics.Color
 

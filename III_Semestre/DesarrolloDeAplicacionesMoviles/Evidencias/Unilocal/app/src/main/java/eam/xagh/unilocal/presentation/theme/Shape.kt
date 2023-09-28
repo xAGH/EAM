@@ -1,4 +1,4 @@
-package eam.xagh.unilocal.ui.theme
+package eam.xagh.unilocal.presentation.theme
 
 import androidx.compose.foundation.shape.RoundedCornerShape
 import androidx.compose.ui.unit.dp
