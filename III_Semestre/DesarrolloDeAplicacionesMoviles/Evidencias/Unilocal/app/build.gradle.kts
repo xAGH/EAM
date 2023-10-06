@@ -67,6 +67,9 @@ object V {
     const val lifecycle_runtime_ktx = "2.6.2"
     const val activity_compose = "1.7.2"
     const val hilt = "2.44"
+    const val navigation = "2.5.3"
+    const val maps = "2.2.1"
+    const val playServicesMaps = "18.1.0"
 }
 
 dependencies {
@@ -85,6 +88,10 @@ dependencies {
     implementation("androidx.compose.ui:ui-tooling-preview")
     implementation("androidx.compose.material3:material3")
     implementation(platform("androidx.compose:compose-bom:${V.compose_boom}"))
+    implementation("androidx.compose.material:material-icons-extended")
+    implementation("androidx.navigation:navigation-compose:${V.navigation}")
+    implementation("com.google.maps.android:maps-compose:${V.maps}")
+    implementation("com.google.android.gms:play-services-maps:${V.playServicesMaps}")
 
     // Dagger Hilt for dependency injection
     implementation("com.google.dagger:hilt-android:${V.hilt}")
